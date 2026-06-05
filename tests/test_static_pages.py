@@ -44,6 +44,7 @@ def test_project_catalog_includes_core_repositories() -> None:
 
 def test_profile_mark_and_contact_are_present() -> None:
     assert (ROOT / "assets" / "profile-mark.svg").exists()
+    assert (ROOT / "assets" / "shawsignaldev-avatar.png").exists()
     assert "shawsignaldev@proton.me" in read(ROOT / "index.html")
 
 
@@ -52,4 +53,3 @@ def test_public_site_avoids_sensitive_language() -> None:
     combined = "\n".join(read(page).lower() for page in PAGES)
     for phrase in forbidden:
         assert phrase not in combined
-
