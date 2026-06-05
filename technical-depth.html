@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Technical depth matrix for Ephraim Shaw portfolio.">
+    <title>Technical Depth | Ephraim Shaw</title>
+    <link rel="icon" href="assets/profile-mark.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html"><img src="assets/profile-mark.svg" alt="Ephraim Shaw profile mark"><span>Ephraim Shaw</span></a>
+        <div class="nav-links">
+          <a href="projects.html">Projects</a>
+          <a href="technical-depth.html">Technical Depth</a>
+          <a href="review-guide.html">Review Guide</a>
+          <a href="https://github.com/shawsignaldev">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h1>Technical Depth Matrix</h1>
+            <p>The portfolio is structured so each repository has a specific technical purpose instead of looking like unrelated experiments.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Skill area</th><th>Evidence</th><th>Repository</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Python packaging</td><td>`src/` layout, `pyproject.toml`, tests, CLI entry points.</td><td>ARGUS, CIPHER, ARES, ORACLE, Aurora, Eidenhall, M2M, Market Data Ingestion Lab</td></tr>
+                <tr><td>Market-data quality</td><td>Provider boundary, OHLCV validation, clean frame output, quality report.</td><td>Market Data Ingestion Lab</td></tr>
+                <tr><td>Quant/risk tooling</td><td>Drawdown, volatility, stability margins, rolling windows, stress framing.</td><td>ARGUS</td></tr>
+                <tr><td>State estimation</td><td>Kalman-style smoothing and control-loop research framing.</td><td>ARGUS</td></tr>
+                <tr><td>Command-line systems</td><td>Command taxonomy, terminal reports, PowerShell launcher surfaces.</td><td>CIPHER, ARGUS</td></tr>
+                <tr><td>Data visualization</td><td>Correlation matrix, graph metrics, thresholded networks, Streamlit app.</td><td>Aurora</td></tr>
+                <tr><td>Product architecture</td><td>Static product flows, operating model, safety standard, payment-roadmap docs.</td><td>Deploq</td></tr>
+                <tr><td>Structured records</td><td>Typed trade schema, CSV ingest, metrics summary, JSON export.</td><td>ARES</td></tr>
+                <tr><td>Operations automation</td><td>Daily memo generation, runbook design, dashboard status flow.</td><td>Eidenhall</td></tr>
+                <tr><td>Embedded/networking</td><td>ESP32, DHT22, TCP/UDP scripts, sensors, microelectronics summaries.</td><td>CPSE Engineering Labs</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid cols-3">
+          <div class="card">
+            <h3>Package discipline</h3>
+            <p>Python repositories use installable layouts where appropriate, small deterministic examples, and tests that do not require private credentials.</p>
+          </div>
+          <div class="card">
+            <h3>Public safety</h3>
+            <p>Finance-related repositories include educational/research disclaimers and avoid sensitive account access, account data, and private records.</p>
+          </div>
+          <div class="card">
+            <h3>Recruiter usability</h3>
+            <p>Every major repository provides a README, architecture documentation, security file, changelog, and role-specific review signal.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container"><p><a href="index.html">Overview</a> | <a href="projects.html">Projects</a> | <a href="review-guide.html">Review Guide</a></p></div>
+    </footer>
+  </body>
+</html>
