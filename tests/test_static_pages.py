@@ -5,6 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PAGES = [
     ROOT / "index.html",
     ROOT / "projects.html",
+    ROOT / "papers.html",
     ROOT / "review-guide.html",
     ROOT / "technical-depth.html",
 ]
@@ -269,3 +270,25 @@ def test_public_site_uses_human_facing_milestone_language() -> None:
 
     assert "system design docs" in combined
     assert "milestone documentation tests" in combined
+
+
+def test_research_papers_are_visible_and_role_relevant() -> None:
+    papers = read(ROOT / "papers.html")
+    homepage = read(ROOT / "index.html")
+
+    expected = [
+        "Market Data Infrastructure Whitepaper",
+        "Strategy Robustness Whitepaper",
+        "FPGA Trading Architecture Whitepaper",
+        "papers/market-data-infrastructure-whitepaper.md",
+        "papers/strategy-robustness-whitepaper.md",
+        "papers/fpga-trading-architecture-whitepaper.md",
+        "low-latency market data",
+        "walk-forward validation",
+        "hardware/software trading datapath",
+    ]
+    for phrase in expected:
+        assert phrase in papers
+
+    assert "papers.html" in homepage
+    assert "Research Papers" in homepage
