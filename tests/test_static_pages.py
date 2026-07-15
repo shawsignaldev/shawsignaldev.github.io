@@ -292,3 +292,17 @@ def test_research_papers_are_visible_and_role_relevant() -> None:
 
     assert "papers.html" in homepage
     assert "Research Papers" in homepage
+
+
+def test_research_papers_page_links_reading_map() -> None:
+    papers = read(ROOT / "papers.html")
+    expected = [
+        "Research Reading Map",
+        "RESEARCH_READING_MAP.md",
+        "DeepLOB",
+        "ABIDES",
+        "FPGA HFT acceleration",
+        "Precision Time Protocol",
+    ]
+    for phrase in expected:
+        assert phrase in papers
