@@ -27,11 +27,12 @@
     <main>
       <section class="hero container">
         <div>
-          <div class="eyebrow">ShawSignalDev | Cyber-Physical Systems Engineering | Quant Systems</div>
-          <h1>Building observable, testable systems for markets, data, and engineered workflows.</h1>
-          <p class="lead">I build software at the intersection of quantitative finance, applied AI systems, market data, and cyber-physical engineering. My public work is organized around the ShawSignalDev thesis: signal in, uncertainty modeled, operator review, and clean systems output.</p>
+          <div class="eyebrow">ShawSignalDev | FPGA Portfolio | Market Infrastructure | Cyber-Physical Systems Engineering</div>
+          <h1>Building verifiable low-latency systems for markets, data, and engineered workflows.</h1>
+          <p class="lead">I build at the intersection of FPGA/RTL design, quantitative finance, market data, and cyber-physical engineering. My public work is organized around the ShawSignalDev thesis: signal in, integrity checked, risk bounded, operator review, and clean systems output.</p>
           <div class="actions">
             <a class="button primary" href="projects.html">Review projects</a>
+            <a class="button secondary" href="https://github.com/shawsignaldev/fpga-low-latency-market-data-engine">FPGA flagship</a>
             <a class="button secondary" href="review-guide.html">Role-based guide</a>
             <a class="button secondary" href="mailto:shawsignaldev@proton.me">Contact</a>
           </div>
@@ -39,12 +40,12 @@
         <aside class="signal-panel" aria-label="Portfolio signal summary">
           <img src="assets/shawsignaldev-avatar.png" alt="">
           <h2>Portfolio Signal</h2>
-          <p>Public repositories are organized around clear README files, architecture notes, deterministic examples, tests, security boundaries, and roadmap discipline.</p>
+          <p>Public repositories are organized around clear README files, architecture notes, deterministic examples, tests, CI verification, security boundaries, and roadmap discipline.</p>
           <div class="metric-grid">
-            <div class="metric"><strong>10+</strong><p>Public portfolio repos</p></div>
+            <div class="metric"><strong>14+</strong><p>Public portfolio repos</p></div>
+            <div class="metric"><strong>4</strong><p>FPGA hardware repos</p></div>
             <div class="metric"><strong>8</strong><p>Python package surfaces</p></div>
             <div class="metric"><strong>CI</strong><p>Tests and static checks</p></div>
-            <div class="metric"><strong>2027</strong><p>UMD B.S. candidate</p></div>
           </div>
         </aside>
       </section>
@@ -52,8 +53,43 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <h2>Featured Systems</h2>
-            <p>These repositories are the fastest way to evaluate the portfolio across quant development, software engineering, fintech infrastructure, data visualization, and cyber-physical systems.</p>
+            <h2>FPGA and Low-Latency Hardware Portfolio</h2>
+            <p>Employer-facing RTL projects for hardware review: synthesizable Verilog/SystemVerilog style modules, Python golden models, self-checking RTL testbenches, GitHub Actions simulation, and honest toolchain-ready documentation without unmeasured timing claims.</p>
+          </div>
+          <div class="grid cols-3">
+            <a class="card featured" href="https://github.com/shawsignaldev/fpga-low-latency-market-data-engine">
+              <div class="project-meta">Flagship FPGA market-data pipeline</div>
+              <h3>Low-Latency Market Data Engine</h3>
+              <p>Parameterized Verilog pipeline with sequence integrity, top-of-book state, deterministic cycle accounting, safety gating, Python model, and RTL simulation CI.</p>
+              <div class="tag-row"><span class="tag">Verilog</span><span class="tag">Market data</span><span class="tag">CI verified</span></div>
+            </a>
+            <a class="card featured" href="https://github.com/shawsignaldev/fpga-nanosecond-orderbook-risk-gate">
+              <div class="project-meta">Hardware risk gate</div>
+              <h3>Nanosecond Orderbook Risk Gate</h3>
+              <p>Order add/replace/cancel state, exposure limits, sequence faults, kill switch, crossed-market halt, Python model, and self-checking RTL verification.</p>
+              <div class="tag-row"><span class="tag">Risk</span><span class="tag">Safety</span><span class="tag">RTL</span></div>
+            </a>
+            <a class="card featured" href="https://github.com/shawsignaldev/fpga-udp-market-data-feed-handler">
+              <div class="project-meta">Hardware networking</div>
+              <h3>UDP Market Data Feed Handler</h3>
+              <p>UDP-style packet parser with port/session filtering, payload extraction, sequence-gap/replay telemetry, checksum metadata, and RTL simulation CI.</p>
+              <div class="tag-row"><span class="tag">Networking</span><span class="tag">Packets</span><span class="tag">FPGA</span></div>
+            </a>
+            <a class="card featured" href="https://github.com/shawsignaldev/fpga-latency-arbitration-crossbar">
+              <div class="project-meta">Low-latency data path</div>
+              <h3>Latency Arbitration Crossbar</h3>
+              <p>Stream arbitration core with backpressure-safe buffering, round-robin routing, latency counters, Python golden model, and self-checking RTL testbench.</p>
+              <div class="tag-row"><span class="tag">Arbitration</span><span class="tag">Backpressure</span><span class="tag">Latency</span></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Software and Quant Systems</h2>
+            <p>Additional repositories show Python tooling, market-data analysis, dashboards, package structure, and operator workflows around the hardware portfolio.</p>
           </div>
           <div class="grid cols-3">
             <a class="card featured" href="https://github.com/shawsignaldev/argus">
@@ -90,6 +126,7 @@
                 <tr><th>Target role</th><th>Start with</th><th>What it shows</th></tr>
               </thead>
               <tbody>
+                <tr><td>Hardware engineer / FPGA</td><td>FPGA market-data engine, orderbook risk gate, UDP feed handler, arbitration crossbar</td><td>RTL modules, self-checking testbenches, Python golden models, CI simulation, low-latency market infrastructure context.</td></tr>
                 <tr><td>Quant developer</td><td>ARGUS, CIPHER, Aurora, Market Data Ingestion Lab</td><td>Risk tooling, market-data workflows, state estimation, graph analytics, data-quality boundaries.</td></tr>
                 <tr><td>Software engineering</td><td>CIPHER, ARES, Eidenhall, M2M</td><td>Package layout, tests, CLI surfaces, schemas, automation, documentation, workflow design.</td></tr>
                 <tr><td>Fintech infrastructure</td><td>ARGUS, ARES, Deploq, Market Data Ingestion Lab</td><td>Controls, auditability, privacy boundaries, local-first data handling, safe public examples.</td></tr>

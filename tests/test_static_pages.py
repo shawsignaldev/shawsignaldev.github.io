@@ -27,6 +27,10 @@ def test_pages_exist_and_have_site_navigation() -> None:
 def test_project_catalog_includes_core_repositories() -> None:
     html = read(ROOT / "projects.html")
     expected = [
+        "fpga-low-latency-market-data-engine",
+        "fpga-nanosecond-orderbook-risk-gate",
+        "fpga-udp-market-data-feed-handler",
+        "fpga-latency-arbitration-crossbar",
         "argus",
         "cipher",
         "ares",
@@ -42,6 +46,17 @@ def test_project_catalog_includes_core_repositories() -> None:
         assert f"github.com/shawsignaldev/{repo}" in html
 
 
+def test_homepage_features_verified_fpga_portfolio() -> None:
+    html = read(ROOT / "index.html")
+    assert "FPGA and Low-Latency Hardware Portfolio" in html
+    assert "CI verification" in html
+    assert "without unmeasured timing claims" in html
+    assert "fpga-low-latency-market-data-engine" in html
+    assert "fpga-nanosecond-orderbook-risk-gate" in html
+    assert "fpga-udp-market-data-feed-handler" in html
+    assert "fpga-latency-arbitration-crossbar" in html
+
+
 def test_profile_mark_and_contact_are_present() -> None:
     assert (ROOT / "assets" / "profile-mark.svg").exists()
     assert (ROOT / "assets" / "shawsignaldev-avatar.png").exists()
@@ -50,6 +65,13 @@ def test_profile_mark_and_contact_are_present() -> None:
 
 def test_public_site_avoids_sensitive_language() -> None:
     forbidden = ["api key", "secret key", "password", "private key", "broker credential"]
+    combined = "\n".join(read(page).lower() for page in PAGES)
+    for phrase in forbidden:
+        assert phrase not in combined
+
+
+def test_public_site_avoids_unverified_hardware_claims() -> None:
+    forbidden = ["timing closed", "fmax", "post-route", "board deployed", "measured vivado"]
     combined = "\n".join(read(page).lower() for page in PAGES)
     for phrase in forbidden:
         assert phrase not in combined
