@@ -27,6 +27,11 @@ def test_pages_exist_and_have_site_navigation() -> None:
 def test_project_catalog_includes_core_repositories() -> None:
     html = read(ROOT / "projects.html")
     expected = [
+        "shaw-latency-research-lab",
+        "market-microstructure-research-platform",
+        "fpga-trading-system-soc",
+        "ai-quant-research-os",
+        "hardware-software-co-design-lab",
         "fpga-low-latency-market-data-engine",
         "fpga-nanosecond-orderbook-risk-gate",
         "fpga-udp-market-data-feed-handler",
