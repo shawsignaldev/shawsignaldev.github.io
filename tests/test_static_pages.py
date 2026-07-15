@@ -306,3 +306,18 @@ def test_research_papers_page_links_reading_map() -> None:
     ]
     for phrase in expected:
         assert phrase in papers
+
+
+def test_review_guide_links_role_packets() -> None:
+    guide = read(ROOT / "review-guide.html")
+    expected = [
+        "Role Packets",
+        "ROLE_PACKETS.md",
+        "Hardware / FPGA Engineer",
+        "Quant Developer",
+        "Market Infrastructure Engineer",
+        "Cyber-Physical Systems Engineer",
+        "AI / Software Engineer",
+    ]
+    for phrase in expected:
+        assert phrase in guide
