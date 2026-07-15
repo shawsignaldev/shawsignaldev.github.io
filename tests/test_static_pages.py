@@ -259,3 +259,13 @@ def test_public_site_avoids_unverified_hardware_claims() -> None:
     combined = "\n".join(read(page).lower() for page in PAGES)
     for phrase in forbidden:
         assert phrase not in combined
+
+
+def test_public_site_uses_human_facing_milestone_language() -> None:
+    combined = "\n".join(read(page).lower() for page in PAGES)
+    forbidden = ["system-design docs", "milestone-doc tests"]
+    for phrase in forbidden:
+        assert phrase not in combined
+
+    assert "system design docs" in combined
+    assert "milestone documentation tests" in combined
