@@ -355,3 +355,23 @@ def test_technical_depth_links_reproducibility_guide() -> None:
     ]
     for phrase in expected:
         assert phrase in depth
+
+
+def test_technical_depth_links_flagship_systems_map() -> None:
+    depth = read(ROOT / "technical-depth.html")
+    expected = [
+        "Flagship Systems Map",
+        "FLAGSHIP_SYSTEMS_MAP.md",
+        "Low-Latency Market Data and FPGA Trading Datapath",
+        "Limit Order Book Intelligence and Market Simulation",
+        "Options Microstructure and 0DTE Research OS",
+        "AI-Governed Quant Research Factory",
+        "Cyber-Physical Timing, Control, and Operator Systems",
+        "DeepLOB",
+        "ABIDES",
+        "LOBFrame",
+        "High Frequency Trading Acceleration using FPGAs",
+        "not isolated repo count",
+    ]
+    for phrase in expected:
+        assert phrase in depth
