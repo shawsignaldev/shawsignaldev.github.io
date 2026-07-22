@@ -407,3 +407,17 @@ def test_projects_page_includes_shared_market_packet_fixtures() -> None:
     ]
     for phrase in expected:
         assert phrase in projects
+
+
+def test_projects_page_includes_fpga_orderflow_formal_properties() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "FPGA Orderflow Formal Properties",
+        "fpga-orderflow-formal-properties",
+        "SVA-style",
+        "halt latch",
+        "bounded acknowledgement latency",
+        "coverage matrix",
+    ]
+    for phrase in expected:
+        assert phrase in projects
