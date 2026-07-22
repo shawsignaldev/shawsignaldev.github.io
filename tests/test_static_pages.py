@@ -435,3 +435,17 @@ def test_projects_page_includes_lob_benchmark_report_generator() -> None:
     ]
     for phrase in expected:
         assert phrase in projects
+
+
+def test_projects_page_includes_synthetic_options_chain_generator() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Synthetic Options Chain Generator",
+        "synthetic-options-chain-generator",
+        "IV skew",
+        "open interest",
+        "target-delta",
+        "Greeks",
+    ]
+    for phrase in expected:
+        assert phrase in projects
