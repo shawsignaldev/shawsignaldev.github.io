@@ -393,3 +393,17 @@ def test_review_guide_links_advanced_research_build_queue() -> None:
     ]
     for phrase in expected:
         assert phrase in guide
+
+
+def test_projects_page_includes_shared_market_packet_fixtures() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Shared Market Packet Fixtures",
+        "shared-market-packet-fixtures",
+        "canonical packet contract",
+        "CSV round trip",
+        "sequence-gap",
+        "top-of-book projection",
+    ]
+    for phrase in expected:
+        assert phrase in projects
