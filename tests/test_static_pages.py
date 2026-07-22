@@ -321,3 +321,21 @@ def test_review_guide_links_role_packets() -> None:
     ]
     for phrase in expected:
         assert phrase in guide
+
+
+def test_technical_depth_links_evidence_ledger() -> None:
+    depth = read(ROOT / "technical-depth.html")
+    expected = [
+        "Evidence Ledger",
+        "PORTFOLIO_EVIDENCE_LEDGER.md",
+        "Low-latency market data",
+        "Strategy robustness",
+        "FPGA and hardware verification",
+        "Cyber-physical systems",
+        "AI research governance",
+        "Public proof artifacts",
+        "Validation method",
+        "Honest boundary",
+    ]
+    for phrase in expected:
+        assert phrase in depth
