@@ -339,3 +339,19 @@ def test_technical_depth_links_evidence_ledger() -> None:
     ]
     for phrase in expected:
         assert phrase in depth
+
+
+def test_technical_depth_links_reproducibility_guide() -> None:
+    depth = read(ROOT / "technical-depth.html")
+    expected = [
+        "Reproducibility Guide",
+        "REPRODUCIBILITY_GUIDE.md",
+        "Profile verification",
+        "Site verification",
+        "Representative repository verification",
+        "python -m pytest -q -p no:cacheprovider",
+        "gh run list",
+        "What this proves",
+    ]
+    for phrase in expected:
+        assert phrase in depth

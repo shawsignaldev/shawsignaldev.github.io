@@ -94,6 +94,39 @@
           </div>
         </div>
       </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Reproducibility Guide</h2>
+            <p>REPRODUCIBILITY_GUIDE.md gives exact commands for Profile verification, Site verification, and Representative repository verification.</p>
+          </div>
+          <div class="grid cols-3">
+            <div class="card">
+              <div class="project-meta">Profile verification</div>
+              <h3>Profile tests and CI</h3>
+              <p>Run python -m unittest discover -s tests -v, git status --short, and gh run list to inspect profile artifacts and recent GitHub Actions status.</p>
+            </div>
+            <div class="card">
+              <div class="project-meta">Site verification</div>
+              <h3>Static site checks</h3>
+              <p>Run python -m pytest -q -p no:cacheprovider and inspect shawsignaldev.github.io Pages/static-check workflow status.</p>
+            </div>
+            <div class="card">
+              <div class="project-meta">Representative repository verification</div>
+              <h3>Sample repo CI</h3>
+              <p>Use gh run list across FPGA, strategy, market-data, and AI governance repos to sample current CI evidence.</p>
+            </div>
+          </div>
+          <div class="notice" style="margin-top: 16px;">
+            <h3>What this proves</h3>
+            <p>The guide proves reviewability: exact commands, public checks, live readback, and boundaries for what the commands do not prove.</p>
+          </div>
+          <div class="actions">
+            <a class="button secondary" href="https://github.com/shawsignaldev/shawsignaldev/blob/main/REPRODUCIBILITY_GUIDE.md">Open REPRODUCIBILITY_GUIDE.md</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
