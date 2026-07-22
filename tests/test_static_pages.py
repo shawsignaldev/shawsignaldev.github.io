@@ -375,3 +375,21 @@ def test_technical_depth_links_flagship_systems_map() -> None:
     ]
     for phrase in expected:
         assert phrase in depth
+
+
+def test_review_guide_links_advanced_research_build_queue() -> None:
+    guide = read(ROOT / "review-guide.html")
+    expected = [
+        "Advanced Research Build Queue",
+        "ADVANCED_RESEARCH_BUILD_QUEUE.md",
+        "Selection standard",
+        "Wave 1: Flagship Hardening",
+        "Wave 2: Paper Reproduction and Benchmarking",
+        "Wave 3: Hardware Acceleration and Formal Verification",
+        "Wave 4: Options and Intraday Trading Research",
+        "Wave 5: Cyber-Physical and Operator Systems",
+        "not count-only expansion",
+        "Proof required before promotion",
+    ]
+    for phrase in expected:
+        assert phrase in guide
