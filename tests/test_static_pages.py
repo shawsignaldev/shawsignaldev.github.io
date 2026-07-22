@@ -421,3 +421,17 @@ def test_projects_page_includes_fpga_orderflow_formal_properties() -> None:
     ]
     for phrase in expected:
         assert phrase in projects
+
+
+def test_projects_page_includes_lob_benchmark_report_generator() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "LOB Benchmark Report Generator",
+        "lob-benchmark-report-generator",
+        "cost-adjusted",
+        "Brier",
+        "latency pass",
+        "Markdown reports",
+    ]
+    for phrase in expected:
+        assert phrase in projects
