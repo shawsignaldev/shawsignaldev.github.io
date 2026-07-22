@@ -169,6 +169,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "ptp-nanosecond-timestamp-core",
         "market-data-tickerplant-simulator",
         "zero-dte-options-backtester",
+        "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
         "iv-surface-microstructure-lab",
@@ -446,6 +447,20 @@ def test_projects_page_includes_synthetic_options_chain_generator() -> None:
         "open interest",
         "target-delta",
         "Greeks",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_option_replay_report_engine() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Option Replay Report Engine",
+        "option-replay-report-engine",
+        "contract PnL",
+        "theta drag",
+        "volatility contribution",
+        "Promote/Watchlist/Reject",
     ]
     for phrase in expected:
         assert phrase in projects
