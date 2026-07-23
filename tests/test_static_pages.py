@@ -39,6 +39,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "fpga-feed-handler-paper-reproduction",
         "ptp-hardware-timestamping-reproduction",
         "abides-market-sim-lab",
+        "market-sim-scenario-library",
         "lobframe-benchmark-suite",
         "option-vol-surface-lab",
         "gamma-exposure-estimator",
@@ -432,6 +433,21 @@ def test_projects_page_includes_lob_benchmark_report_generator() -> None:
         "cost-adjusted",
         "Brier",
         "latency pass",
+        "Markdown reports",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_market_sim_scenario_library() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Market Sim Scenario Library",
+        "market-sim-scenario-library",
+        "ABIDES-style",
+        "deterministic seeds",
+        "latency matrices",
+        "liquidity-drought",
         "Markdown reports",
     ]
     for phrase in expected:
