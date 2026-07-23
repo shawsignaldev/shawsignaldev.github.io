@@ -51,6 +51,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "ptp-hardware-timestamping-reproduction",
         "ptp-fault-injection-core",
         "lobin-style-in-network-inference",
+        "quantized-lob-inference-fpga",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
@@ -340,6 +341,23 @@ def test_projects_page_includes_lobin_style_in_network_inference() -> None:
         "public-safe",
         "fixed-point",
         "latency/accuracy tradeoff",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_quantized_lob_inference_fpga() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Quantized LOB Inference FPGA",
+        "quantized-lob-inference-fpga",
+        "DeepLOB",
+        "LOBIN",
+        "public-safe",
+        "fixed-point",
+        "error bounds",
+        "throughput estimate",
         "not a production trading system",
     ]
     for term in required_terms:
