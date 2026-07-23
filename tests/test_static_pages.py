@@ -49,6 +49,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "pcie-dma-descriptor-verification",
         "axi-stream-backpressure-lab",
         "ptp-hardware-timestamping-reproduction",
+        "ptp-fault-injection-core",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
@@ -306,6 +307,23 @@ def test_projects_page_includes_itch_to_risk_full_pipeline() -> None:
         "risk approval",
         "replay trace",
         "FPGA",
+        "public-safe",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_ptp_fault_injection_core() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "PTP Fault Injection Core",
+        "ptp-fault-injection-core",
+        "Offset attack",
+        "Drift injection",
+        "Recovery",
+        "Operator alert",
+        "Precision Time Protocol",
+        "cyber-physical",
         "public-safe",
     ]
     for term in required_terms:
