@@ -50,6 +50,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "axi-stream-backpressure-lab",
         "ptp-hardware-timestamping-reproduction",
         "ptp-fault-injection-core",
+        "lobin-style-in-network-inference",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
@@ -325,6 +326,21 @@ def test_projects_page_includes_ptp_fault_injection_core() -> None:
         "Precision Time Protocol",
         "cyber-physical",
         "public-safe",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_lobin_style_in_network_inference() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "LOBIN-Style In-Network Inference",
+        "lobin-style-in-network-inference",
+        "SmartNIC/P4-style",
+        "public-safe",
+        "fixed-point",
+        "latency/accuracy tradeoff",
+        "not a production trading system",
     ]
     for term in required_terms:
         assert term in html
