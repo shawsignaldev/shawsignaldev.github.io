@@ -45,6 +45,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
+        "pcie-dma-descriptor-verification",
         "ptp-hardware-timestamping-reproduction",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
@@ -254,6 +255,23 @@ def test_projects_page_includes_market_impact_validation_suite() -> None:
         "decay half-life",
         "ABIDES",
         "LOBFrame",
+        "public-safe",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_pcie_dma_descriptor_verification() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "PCIe DMA Descriptor Verification",
+        "pcie-dma-descriptor-verification",
+        "descriptor validity",
+        "wraparound",
+        "burst sizing",
+        "completion accounting",
+        "FPGA",
+        "DMA",
         "public-safe",
     ]
     for term in required_terms:
