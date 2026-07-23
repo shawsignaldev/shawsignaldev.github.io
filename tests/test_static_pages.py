@@ -32,6 +32,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "market-microstructure-research-platform",
         "fpga-trading-system-soc",
         "ai-quant-research-os",
+        "research-queue-state-machine",
         "hardware-software-co-design-lab",
         "deeplob-reproduction-lab",
         "hlob-feature-research",
@@ -477,6 +478,21 @@ def test_projects_page_includes_option_replay_report_engine() -> None:
         "theta drag",
         "volatility contribution",
         "Promote/Watchlist/Reject",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_research_queue_state_machine() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Research Queue State Machine",
+        "research-queue-state-machine",
+        "Evidence-gated workflow",
+        "promoted",
+        "watchlisted",
+        "missing-evidence checks",
+        "human approval gates",
     ]
     for phrase in expected:
         assert phrase in projects
