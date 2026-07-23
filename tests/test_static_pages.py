@@ -40,6 +40,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "lobench-representation-lab",
         "lob-bench-generative-evaluator",
         "abides-agent-strategy-zoo",
+        "abides-latency-impact-study",
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
@@ -608,6 +609,23 @@ def test_projects_page_includes_abides_agent_strategy_zoo() -> None:
         "deterministic event simulation",
         "agent PnL",
         "inventory risk",
+        "public-safe",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_abides_latency_impact_study() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "ABIDES Latency Impact Study",
+        "abides-latency-impact-study",
+        "pairwise latency matrix",
+        "execution-quality report",
+        "latency advantage",
+        "fill rate",
+        "opportunity loss",
+        "market infrastructure",
         "public-safe",
     ]
     for phrase in expected:
