@@ -41,6 +41,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "lob-bench-generative-evaluator",
         "abides-agent-strategy-zoo",
         "abides-latency-impact-study",
+        "market-impact-validation-suite",
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
@@ -240,6 +241,23 @@ def test_project_catalog_includes_core_repositories() -> None:
     ]
     for repo in expected:
         assert f"github.com/shawsignaldev/{repo}" in html
+
+
+def test_projects_page_includes_market_impact_validation_suite() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Market Impact Validation Suite",
+        "market-impact-validation-suite",
+        "temporary impact",
+        "permanent impact",
+        "implementation shortfall",
+        "decay half-life",
+        "ABIDES",
+        "LOBFrame",
+        "public-safe",
+    ]
+    for term in required_terms:
+        assert term in html
 
 
 def test_homepage_features_verified_fpga_portfolio() -> None:
