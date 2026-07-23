@@ -42,6 +42,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "ptp-hardware-timestamping-reproduction",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
+        "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
         "option-vol-surface-lab",
         "gamma-exposure-estimator",
@@ -523,6 +524,21 @@ def test_projects_page_includes_deeplob_leakage_test_harness() -> None:
         "label horizon",
         "lookahead leakage",
         "baseline metrics",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_lobframe_metric_dashboard() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "LOBFrame Metric Dashboard",
+        "lobframe-metric-dashboard",
+        "macro F1",
+        "calibration",
+        "turnover",
+        "cost-adjusted PnL",
+        "latency pass rate",
     ]
     for phrase in expected:
         assert phrase in projects
