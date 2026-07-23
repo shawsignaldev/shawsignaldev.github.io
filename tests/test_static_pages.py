@@ -38,6 +38,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "deeplob-leakage-test-harness",
         "hlob-depth-persistence-study",
         "lobench-representation-lab",
+        "lob-bench-generative-evaluator",
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
@@ -571,6 +572,23 @@ def test_projects_page_includes_lobench_representation_lab() -> None:
         "representation family",
         "symbol split",
         "leakage-aware",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_lob_bench_generative_evaluator() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "LOB-Bench Generative Evaluator",
+        "lob-bench-generative-evaluator",
+        "realism metrics",
+        "synthetic message-by-order data",
+        "event mix",
+        "interarrival",
+        "order lifetime",
+        "invariant checks",
+        "public-safe",
     ]
     for phrase in expected:
         assert phrase in projects
