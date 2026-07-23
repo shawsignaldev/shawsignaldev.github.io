@@ -36,6 +36,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "hardware-software-co-design-lab",
         "deeplob-reproduction-lab",
         "deeplob-leakage-test-harness",
+        "hlob-depth-persistence-study",
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
@@ -539,6 +540,21 @@ def test_projects_page_includes_lobframe_metric_dashboard() -> None:
         "turnover",
         "cost-adjusted PnL",
         "latency pass rate",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_hlob_depth_persistence_study() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "HLOB Depth Persistence Study",
+        "hlob-depth-persistence-study",
+        "deep-level persistence",
+        "ablation report",
+        "shallow",
+        "deep",
+        "persistence features",
     ]
     for phrase in expected:
         assert phrase in projects
