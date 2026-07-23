@@ -46,6 +46,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
         "pcie-dma-descriptor-verification",
+        "axi-stream-backpressure-lab",
         "ptp-hardware-timestamping-reproduction",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
@@ -272,6 +273,22 @@ def test_projects_page_includes_pcie_dma_descriptor_verification() -> None:
         "completion accounting",
         "FPGA",
         "DMA",
+        "public-safe",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_axi_stream_backpressure_lab() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "AXI Stream Backpressure Lab",
+        "axi-stream-backpressure-lab",
+        "ready/valid",
+        "stall coverage",
+        "no-loss packet tests",
+        "skid buffer",
+        "FPGA",
         "public-safe",
     ]
     for term in required_terms:
