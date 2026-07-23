@@ -37,6 +37,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "deeplob-reproduction-lab",
         "deeplob-leakage-test-harness",
         "hlob-depth-persistence-study",
+        "lobench-representation-lab",
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
@@ -555,6 +556,21 @@ def test_projects_page_includes_hlob_depth_persistence_study() -> None:
         "shallow",
         "deep",
         "persistence features",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_lobench_representation_lab() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "LOBench Representation Lab",
+        "lobench-representation-lab",
+        "transferability",
+        "downstream tasks",
+        "representation family",
+        "symbol split",
+        "leakage-aware",
     ]
     for phrase in expected:
         assert phrase in projects
