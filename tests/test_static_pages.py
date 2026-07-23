@@ -217,6 +217,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "distributed-clock-sync-lab",
         "embedded-signal-processing-lab",
         "operator-console-design-system",
+        "degraded-mode-operator-console",
         "event-driven-alpha-pipeline",
         "market-replay-hardware-harness",
         "argus",
@@ -493,6 +494,20 @@ def test_projects_page_includes_research_queue_state_machine() -> None:
         "watchlisted",
         "missing-evidence checks",
         "human approval gates",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_degraded_mode_operator_console() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Degraded Mode Operator Console",
+        "degraded-mode-operator-console",
+        "Precision Time Protocol",
+        "operator acknowledgement",
+        "recovery",
+        "safe mode",
     ]
     for phrase in expected:
         assert phrase in projects
