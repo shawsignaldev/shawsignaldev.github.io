@@ -34,6 +34,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "ai-quant-research-os",
         "research-queue-state-machine",
         "hardware-software-co-design-lab",
+        "itch-to-risk-full-pipeline",
         "deeplob-reproduction-lab",
         "deeplob-leakage-test-harness",
         "hlob-depth-persistence-study",
@@ -288,6 +289,22 @@ def test_projects_page_includes_axi_stream_backpressure_lab() -> None:
         "stall coverage",
         "no-loss packet tests",
         "skid buffer",
+        "FPGA",
+        "public-safe",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_itch_to_risk_full_pipeline() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "ITCH To Risk Full Pipeline",
+        "itch-to-risk-full-pipeline",
+        "end-to-end parse",
+        "book update",
+        "risk approval",
+        "replay trace",
         "FPGA",
         "public-safe",
     ]
