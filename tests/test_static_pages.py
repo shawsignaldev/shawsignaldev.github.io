@@ -35,6 +35,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "research-queue-state-machine",
         "hardware-software-co-design-lab",
         "deeplob-reproduction-lab",
+        "deeplob-leakage-test-harness",
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
@@ -508,6 +509,20 @@ def test_projects_page_includes_degraded_mode_operator_console() -> None:
         "operator acknowledgement",
         "recovery",
         "safe mode",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_deeplob_leakage_test_harness() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "DeepLOB Leakage Test Harness",
+        "deeplob-leakage-test-harness",
+        "chronological split",
+        "label horizon",
+        "lookahead leakage",
+        "baseline metrics",
     ]
     for phrase in expected:
         assert phrase in projects
