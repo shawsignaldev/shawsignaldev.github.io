@@ -39,6 +39,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "hlob-depth-persistence-study",
         "lobench-representation-lab",
         "lob-bench-generative-evaluator",
+        "abides-agent-strategy-zoo",
         "hlob-feature-research",
         "optimal-execution-rl-lab",
         "fpga-feed-handler-paper-reproduction",
@@ -588,6 +589,25 @@ def test_projects_page_includes_lob_bench_generative_evaluator() -> None:
         "interarrival",
         "order lifetime",
         "invariant checks",
+        "public-safe",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_abides_agent_strategy_zoo() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "ABIDES Agent Strategy Zoo",
+        "abides-agent-strategy-zoo",
+        "market maker",
+        "momentum",
+        "noise",
+        "informed",
+        "latency-arbitrage",
+        "deterministic event simulation",
+        "agent PnL",
+        "inventory risk",
         "public-safe",
     ]
     for phrase in expected:
