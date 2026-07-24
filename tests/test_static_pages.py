@@ -191,6 +191,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "gamma-vwap-confluence-lab",
         "weekly-contract-selector-benchmark",
         "intraday-iv-expansion-monitor",
+        "open-interest-liquidity-regime-lab",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -467,6 +468,24 @@ def test_projects_page_includes_intraday_iv_expansion_monitor() -> None:
         "volatility regime",
         "spread control",
         "signal-quality report",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_open_interest_liquidity_regime_lab() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Open Interest Liquidity Regime Lab",
+        "open-interest-liquidity-regime-lab",
+        "Strategy Robustness Whitepaper",
+        "public-safe",
+        "OI, spread, volume, and contract survivability scoring",
+        "open interest growth",
+        "liquidity regime",
+        "contract survivability",
         "not financial advice",
         "not a production trading system",
     ]
