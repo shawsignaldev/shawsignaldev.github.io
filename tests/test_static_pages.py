@@ -190,6 +190,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "zero-dte-opening-drive-study",
         "gamma-vwap-confluence-lab",
         "weekly-contract-selector-benchmark",
+        "intraday-iv-expansion-monitor",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -448,6 +449,24 @@ def test_projects_page_includes_weekly_contract_selector_benchmark() -> None:
         "liquidity filters",
         "target-delta selection",
         "spread control",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_intraday_iv_expansion_monitor() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Intraday IV Expansion Monitor",
+        "intraday-iv-expansion-monitor",
+        "Rough volatility and IV surface notes",
+        "public-safe",
+        "IV expansion/compression labels",
+        "volatility regime",
+        "spread control",
+        "signal-quality report",
         "not financial advice",
         "not a production trading system",
     ]
