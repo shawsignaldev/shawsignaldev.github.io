@@ -193,6 +193,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "intraday-iv-expansion-monitor",
         "open-interest-liquidity-regime-lab",
         "first-hour-momentum-regime-lab",
+        "session-high-low-breakout-validator",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -505,6 +506,24 @@ def test_projects_page_includes_first_hour_momentum_regime_lab() -> None:
         "expectancy",
         "drawdown",
         "volume confirmation",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_session_high_low_breakout_validator() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Session High/Low Breakout Validator",
+        "session-high-low-breakout-validator",
+        "Strategy Robustness Whitepaper",
+        "public-safe",
+        "Premarket, regular session, and close-range breakout validation",
+        "close-location value",
+        "VWAP distance",
+        "volume pressure",
         "not financial advice",
         "not a production trading system",
     ]
