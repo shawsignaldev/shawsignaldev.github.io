@@ -564,6 +564,22 @@ def test_projects_page_includes_plant_market_control_analogy_lab() -> None:
         assert term in html
 
 
+def test_projects_page_includes_distributed_clock_health_dashboard() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Distributed Clock Health Dashboard",
+        "distributed-clock-health-dashboard",
+        "Precision Time Protocol references",
+        "Clock offset, drift, jitter, and degraded-state visualization",
+        "fleet health score",
+        "worst-node ranking",
+        "operator action",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
