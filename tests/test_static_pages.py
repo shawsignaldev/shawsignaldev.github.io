@@ -194,6 +194,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "open-interest-liquidity-regime-lab",
         "first-hour-momentum-regime-lab",
         "session-high-low-breakout-validator",
+        "risk-adjusted-trade-sizing-engine",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -526,6 +527,22 @@ def test_projects_page_includes_session_high_low_breakout_validator() -> None:
         "volume pressure",
         "not financial advice",
         "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_risk_adjusted_trade_sizing_engine() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Risk-Adjusted Trade Sizing Engine",
+        "risk-adjusted-trade-sizing-engine",
+        "Strategy Robustness Whitepaper",
+        "public-safe",
+        "Kelly-capped, drawdown-capped, volatility-scaled sizing report",
+        "risk budget",
+        "position debit",
+        "dollars at risk",
     ]
     for term in required_terms:
         assert term in html
