@@ -192,6 +192,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "weekly-contract-selector-benchmark",
         "intraday-iv-expansion-monitor",
         "open-interest-liquidity-regime-lab",
+        "first-hour-momentum-regime-lab",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -486,6 +487,24 @@ def test_projects_page_includes_open_interest_liquidity_regime_lab() -> None:
         "open interest growth",
         "liquidity regime",
         "contract survivability",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_first_hour_momentum_regime_lab() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "First-Hour Momentum Regime Lab",
+        "first-hour-momentum-regime-lab",
+        "LOBFrame",
+        "public-safe",
+        "Open, midday, and close regime splits",
+        "expectancy",
+        "drawdown",
+        "volume confirmation",
         "not financial advice",
         "not a production trading system",
     ]
