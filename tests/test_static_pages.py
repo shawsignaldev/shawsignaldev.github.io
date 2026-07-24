@@ -580,6 +580,22 @@ def test_projects_page_includes_distributed_clock_health_dashboard() -> None:
         assert term in html
 
 
+def test_projects_page_includes_real_time_alert_scheduler() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Real-Time Alert Scheduler",
+        "real-time-alert-scheduler",
+        "Real-time scheduling references",
+        "Deadline, priority inversion, dropped alert, and recovery checks",
+        "missed-deadline accounting",
+        "queue pressure",
+        "operator recovery",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
