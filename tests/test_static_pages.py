@@ -53,6 +53,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "lobin-style-in-network-inference",
         "quantized-lob-inference-fpga",
         "hbm-lob-layout-benchmark",
+        "systolic-lob-feature-engine",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
@@ -376,6 +377,22 @@ def test_projects_page_includes_hbm_lob_layout_benchmark() -> None:
         "row locality",
         "throughput",
         "storage-layout report",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_systolic_lob_feature_engine() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Systolic LOB Feature Engine",
+        "systolic-lob-feature-engine",
+        "DeepLOB",
+        "public-safe",
+        "matrix/vector feature projection",
+        "cycle estimate",
+        "limitations",
         "not a production trading system",
     ]
     for term in required_terms:
