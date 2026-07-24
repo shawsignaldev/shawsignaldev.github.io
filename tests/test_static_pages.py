@@ -189,6 +189,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "zero-dte-options-backtester",
         "zero-dte-opening-drive-study",
         "gamma-vwap-confluence-lab",
+        "weekly-contract-selector-benchmark",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -429,6 +430,24 @@ def test_projects_page_includes_gamma_vwap_confluence_lab() -> None:
         "VWAP",
         "volume pressure",
         "failed-breakout classification",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_weekly_contract_selector_benchmark() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Weekly Contract Selector Benchmark",
+        "weekly-contract-selector-benchmark",
+        "Strategy Robustness Whitepaper",
+        "public-safe",
+        "Same-day versus nearest-weekly comparison",
+        "liquidity filters",
+        "target-delta selection",
+        "spread control",
         "not financial advice",
         "not a production trading system",
     ]
