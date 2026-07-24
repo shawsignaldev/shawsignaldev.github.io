@@ -52,6 +52,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "ptp-fault-injection-core",
         "lobin-style-in-network-inference",
         "quantized-lob-inference-fpga",
+        "hbm-lob-layout-benchmark",
         "abides-market-sim-lab",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
@@ -358,6 +359,23 @@ def test_projects_page_includes_quantized_lob_inference_fpga() -> None:
         "fixed-point",
         "error bounds",
         "throughput estimate",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_hbm_lob_layout_benchmark() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "HBM LOB Layout Benchmark",
+        "hbm-lob-layout-benchmark",
+        "LOBFrame",
+        "public-safe",
+        "bank conflict",
+        "row locality",
+        "throughput",
+        "storage-layout report",
         "not a production trading system",
     ]
     for term in required_terms:
