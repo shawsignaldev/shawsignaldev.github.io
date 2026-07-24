@@ -188,6 +188,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "market-data-tickerplant-simulator",
         "zero-dte-options-backtester",
         "zero-dte-opening-drive-study",
+        "gamma-vwap-confluence-lab",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -412,6 +413,24 @@ def test_projects_page_includes_zero_dte_opening_drive_study() -> None:
         "slippage",
         "walk-forward report",
         "not financial advice",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_gamma_vwap_confluence_lab() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Gamma/VWAP Confluence Lab",
+        "gamma-vwap-confluence-lab",
+        "Strategy Robustness Whitepaper",
+        "public-safe",
+        "gamma level",
+        "VWAP",
+        "volume pressure",
+        "failed-breakout classification",
+        "not financial advice",
+        "not a production trading system",
     ]
     for term in required_terms:
         assert term in html
