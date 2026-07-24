@@ -187,6 +187,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "ptp-nanosecond-timestamp-core",
         "market-data-tickerplant-simulator",
         "zero-dte-options-backtester",
+        "zero-dte-opening-drive-study",
         "option-replay-report-engine",
         "dealer-gamma-feedback-lab",
         "options-flow-anomaly-detector",
@@ -394,6 +395,23 @@ def test_projects_page_includes_systolic_lob_feature_engine() -> None:
         "cycle estimate",
         "limitations",
         "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
+def test_projects_page_includes_zero_dte_opening_drive_study() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Zero-DTE Opening Drive Study",
+        "zero-dte-opening-drive-study",
+        "Strategy Robustness Whitepaper",
+        "public-safe",
+        "First 5/15/45 minute windows",
+        "risk sizing",
+        "slippage",
+        "walk-forward report",
+        "not financial advice",
     ]
     for term in required_terms:
         assert term in html
