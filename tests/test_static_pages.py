@@ -548,6 +548,22 @@ def test_projects_page_includes_risk_adjusted_trade_sizing_engine() -> None:
         assert term in html
 
 
+def test_projects_page_includes_plant_market_control_analogy_lab() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Plant Market Control Analogy Lab",
+        "plant-market-control-analogy-lab",
+        "Precision Time Protocol references",
+        "Sensor, estimator, controller, actuator, and operator intervention model",
+        "sensor health",
+        "control error",
+        "operator intervention",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
