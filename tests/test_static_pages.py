@@ -31,6 +31,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "shaw-latency-research-lab",
         "market-microstructure-research-platform",
         "fpga-trading-system-soc",
+        "fpga-trading-reference-architecture",
         "ai-quant-research-os",
         "research-queue-state-machine",
         "hardware-software-co-design-lab",
@@ -1078,6 +1079,26 @@ def test_projects_page_includes_exchange_in_a_box_simulator() -> None:
         "replay correctness",
         "matching fills",
         "auction clears",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_fpga_trading_reference_architecture() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "FPGA Trading Reference Architecture",
+        "fpga-trading-reference-architecture",
+        "public-safe consolidated FPGA trading reference architecture",
+        "shared golden models",
+        "verification fixtures",
+        "packet parser",
+        "order book",
+        "risk gate",
+        "latency budget",
+        "sequence integrity",
         "not financial advice",
         "not a production trading system",
     ]
