@@ -64,6 +64,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "exchange-in-a-box-simulator",
         "exchange-microburst-simulator",
         "ouch-order-entry-gateway-simulator",
+        "drop-copy-reconciliation-engine",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1240,6 +1241,27 @@ def test_projects_page_includes_ouch_order_entry_gateway_simulator() -> None:
         "not financial advice",
         "not a production trading system",
         "not a real OUCH implementation",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_drop_copy_reconciliation_engine() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Drop-Copy Reconciliation Engine",
+        "drop-copy-reconciliation-engine",
+        "drop-copy reconciliation",
+        "gateway decisions",
+        "execution reports",
+        "quantity mismatch",
+        "sequence gaps",
+        "duplicate execution report",
+        "operator escalation",
+        "market infrastructure",
+        "not financial advice",
+        "not a production trading system",
+        "not connected to a broker or exchange",
     ]
     for phrase in expected:
         assert phrase in projects
