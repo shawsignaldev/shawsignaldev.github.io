@@ -34,6 +34,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "fpga-trading-reference-architecture",
         "ai-quant-research-os",
         "cross-universe-strategy-benchmark",
+        "cpse-market-control-room",
         "research-queue-state-machine",
         "hardware-software-co-design-lab",
         "itch-to-risk-full-pipeline",
@@ -1121,6 +1122,24 @@ def test_projects_page_includes_cross_universe_strategy_benchmark() -> None:
         "stored reports",
         "not financial advice",
         "not a production trading system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_cpse_market_control_room() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "CPSE Market Control Room",
+        "cpse-market-control-room",
+        "timing health",
+        "telemetry integrity",
+        "sensor fusion",
+        "control loop stability",
+        "operator dashboard",
+        "degraded-mode",
+        "not a production trading system",
+        "not a deployed industrial control system",
     ]
     for phrase in expected:
         assert phrase in projects
