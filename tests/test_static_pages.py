@@ -628,6 +628,22 @@ def test_projects_page_includes_sensor_fusion_market_risk_bridge() -> None:
         assert term in html
 
 
+def test_projects_page_includes_timing_attack_incident_runbook() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Timing Attack Incident Runbook",
+        "timing-attack-incident-runbook",
+        "Precision Time Protocol references",
+        "Attack, detection, severity, mitigation, and postmortem template",
+        "escalation",
+        "operator communication bridge",
+        "trusted-source recovery",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
