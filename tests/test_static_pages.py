@@ -32,6 +32,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "market-microstructure-research-platform",
         "fpga-trading-system-soc",
         "fpga-trading-reference-architecture",
+        "fpga-orderbook-verification-suite",
         "ai-quant-research-os",
         "cross-universe-strategy-benchmark",
         "strategy-overfitting-firewall",
@@ -1157,6 +1158,25 @@ def test_projects_page_includes_strategy_overfitting_firewall() -> None:
         "walk-forward consistency",
         "parameter fragility",
         "human approval",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_fpga_orderbook_verification_suite() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "FPGA Orderbook Verification Suite",
+        "fpga-orderbook-verification-suite",
+        "golden model replay",
+        "sequence monotonicity",
+        "crossed book",
+        "risk gate",
+        "coverage matrix",
+        "RTL boundary",
+        "SystemVerilog assertion",
         "not financial advice",
         "not a production trading system",
     ]
