@@ -55,6 +55,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "hbm-lob-layout-benchmark",
         "systolic-lob-feature-engine",
         "abides-market-sim-lab",
+        "exchange-in-a-box-simulator",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1062,6 +1063,23 @@ def test_projects_page_includes_abides_latency_impact_study() -> None:
         "opportunity loss",
         "market infrastructure",
         "public-safe",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_exchange_in_a_box_simulator() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Exchange-in-a-Box Simulator",
+        "exchange-in-a-box-simulator",
+        "unified exchange-in-a-box simulator tying market data, matching, auctions, latency, replay, and agent strategies together",
+        "shared event schema",
+        "replay correctness",
+        "matching fills",
+        "auction clears",
+        "not financial advice",
+        "not a production trading system",
     ]
     for phrase in expected:
         assert phrase in projects
