@@ -33,6 +33,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "fpga-trading-system-soc",
         "fpga-trading-reference-architecture",
         "ai-quant-research-os",
+        "cross-universe-strategy-benchmark",
         "research-queue-state-machine",
         "hardware-software-co-design-lab",
         "itch-to-risk-full-pipeline",
@@ -1099,6 +1100,25 @@ def test_projects_page_includes_fpga_trading_reference_architecture() -> None:
         "risk gate",
         "latency budget",
         "sequence integrity",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_cross_universe_strategy_benchmark() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Cross-Universe Strategy Benchmark",
+        "cross-universe-strategy-benchmark",
+        "strategy research benchmark that runs common evaluation metrics across a defined universe and stores reports",
+        "walk-forward validation",
+        "expectancy",
+        "profit factor",
+        "max drawdown",
+        "universe coverage",
+        "stored reports",
         "not financial advice",
         "not a production trading system",
     ]
