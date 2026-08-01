@@ -34,6 +34,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "fpga-trading-reference-architecture",
         "ai-quant-research-os",
         "cross-universe-strategy-benchmark",
+        "strategy-overfitting-firewall",
         "cpse-market-control-room",
         "research-queue-state-machine",
         "hardware-software-co-design-lab",
@@ -1140,6 +1141,24 @@ def test_projects_page_includes_cpse_market_control_room() -> None:
         "degraded-mode",
         "not a production trading system",
         "not a deployed industrial control system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_strategy_overfitting_firewall() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Strategy Overfitting Firewall",
+        "strategy-overfitting-firewall",
+        "Deflated Sharpe",
+        "Probability of backtest overfitting",
+        "multiple-testing penalty",
+        "walk-forward consistency",
+        "parameter fragility",
+        "human approval",
+        "not financial advice",
+        "not a production trading system",
     ]
     for phrase in expected:
         assert phrase in projects
