@@ -63,6 +63,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "abides-market-sim-lab",
         "exchange-in-a-box-simulator",
         "exchange-microburst-simulator",
+        "ouch-order-entry-gateway-simulator",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1218,6 +1219,27 @@ def test_projects_page_includes_exchange_microburst_simulator() -> None:
         "operator actions",
         "not financial advice",
         "not a production trading system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_ouch_order_entry_gateway_simulator() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "OUCH Order Entry Gateway Simulator",
+        "ouch-order-entry-gateway-simulator",
+        "OUCH-style order entry",
+        "session sequencing",
+        "risk rejection",
+        "throttle pressure",
+        "ack latency",
+        "order gateway",
+        "market infrastructure",
+        "operator actions",
+        "not financial advice",
+        "not a production trading system",
+        "not a real OUCH implementation",
     ]
     for phrase in expected:
         assert phrase in projects
