@@ -65,6 +65,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "exchange-microburst-simulator",
         "ouch-order-entry-gateway-simulator",
         "drop-copy-reconciliation-engine",
+        "session-heartbeat-failover-monitor",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1257,6 +1258,27 @@ def test_projects_page_includes_drop_copy_reconciliation_engine() -> None:
         "quantity mismatch",
         "sequence gaps",
         "duplicate execution report",
+        "operator escalation",
+        "market infrastructure",
+        "not financial advice",
+        "not a production trading system",
+        "not connected to a broker or exchange",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_session_heartbeat_failover_monitor() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Session Heartbeat Failover Monitor",
+        "session-heartbeat-failover-monitor",
+        "session heartbeat",
+        "session liveness",
+        "heartbeat gaps",
+        "primary backup failover",
+        "split-brain warnings",
+        "failover SLA",
         "operator escalation",
         "market infrastructure",
         "not financial advice",
