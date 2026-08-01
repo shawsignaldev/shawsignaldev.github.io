@@ -596,6 +596,21 @@ def test_projects_page_includes_real_time_alert_scheduler() -> None:
         assert term in html
 
 
+def test_projects_page_includes_udp_control_plane_safety_monitor() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "UDP Control Plane Safety Monitor",
+        "udp-control-plane-safety-monitor",
+        "Precision Time Protocol references",
+        "Packet loss, sequence gap, stale command, and operator override behavior",
+        "rejected command",
+        "operator override",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
