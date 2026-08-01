@@ -644,6 +644,22 @@ def test_projects_page_includes_timing_attack_incident_runbook() -> None:
         assert term in html
 
 
+def test_projects_page_includes_evidence_ledger_dashboard() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Evidence Ledger Dashboard",
+        "evidence-ledger-dashboard",
+        "Model-risk and evidence-gating notes",
+        "Capability-to-proof dashboard with missing-evidence warnings",
+        "owner coverage",
+        "rejected proof",
+        "blocked verdict",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
