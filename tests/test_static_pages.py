@@ -41,6 +41,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "hardware-software-co-design-lab",
         "itch-to-risk-full-pipeline",
         "deeplob-reproduction-lab",
+        "lob-alpha-decay-research-lab",
         "deeplob-leakage-test-harness",
         "hlob-depth-persistence-study",
         "lobench-representation-lab",
@@ -1177,6 +1178,24 @@ def test_projects_page_includes_fpga_orderbook_verification_suite() -> None:
         "coverage matrix",
         "RTL boundary",
         "SystemVerilog assertion",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_lob_alpha_decay_research_lab() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "LOB Alpha Decay Research Lab",
+        "lob-alpha-decay-research-lab",
+        "signal half-life",
+        "horizon decay",
+        "cost-adjusted edge",
+        "information coefficient",
+        "turnover cost drag",
+        "limit order book",
         "not financial advice",
         "not a production trading system",
     ]
