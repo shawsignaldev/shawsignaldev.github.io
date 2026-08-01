@@ -62,6 +62,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "systolic-lob-feature-engine",
         "abides-market-sim-lab",
         "exchange-in-a-box-simulator",
+        "exchange-microburst-simulator",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1196,6 +1197,25 @@ def test_projects_page_includes_lob_alpha_decay_research_lab() -> None:
         "information coefficient",
         "turnover cost drag",
         "limit order book",
+        "not financial advice",
+        "not a production trading system",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_exchange_microburst_simulator() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Exchange Microburst Simulator",
+        "exchange-microburst-simulator",
+        "exchange microburst",
+        "queue pressure",
+        "tail latency",
+        "packet drops",
+        "capacity planning",
+        "market infrastructure",
+        "operator actions",
         "not financial advice",
         "not a production trading system",
     ]
