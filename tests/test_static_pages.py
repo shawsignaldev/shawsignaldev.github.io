@@ -660,6 +660,23 @@ def test_projects_page_includes_evidence_ledger_dashboard() -> None:
         assert term in html
 
 
+def test_projects_page_includes_recruiter_review_path_generator() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Recruiter Review Path Generator",
+        "recruiter-review-path-generator",
+        "Internal role packet docs",
+        "Role-specific artifact path generated from project metadata",
+        "selected repositories",
+        "review steps",
+        "missing link warnings",
+        "coverage score",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
