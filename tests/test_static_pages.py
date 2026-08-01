@@ -611,6 +611,23 @@ def test_projects_page_includes_udp_control_plane_safety_monitor() -> None:
         assert term in html
 
 
+def test_projects_page_includes_sensor_fusion_market_risk_bridge() -> None:
+    html = read(ROOT / "projects.html")
+    required_terms = [
+        "Sensor Fusion Market Risk Bridge",
+        "sensor-fusion-market-risk-bridge",
+        "Kalman filtering and state estimation notes",
+        "Noisy sensor analogy connected to noisy market state estimation",
+        "Kalman gain",
+        "posterior variance",
+        "low-trust sensor",
+        "residual risk",
+        "not a production trading system",
+    ]
+    for term in required_terms:
+        assert term in html
+
+
 def test_homepage_features_verified_fpga_portfolio() -> None:
     html = read(ROOT / "index.html")
     assert "FPGA and Low-Latency Hardware Portfolio" in html
