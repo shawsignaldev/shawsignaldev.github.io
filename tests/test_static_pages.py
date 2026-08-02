@@ -66,6 +66,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "ouch-order-entry-gateway-simulator",
         "drop-copy-reconciliation-engine",
         "session-heartbeat-failover-monitor",
+        "low-latency-trading-system-capstone",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1281,6 +1282,29 @@ def test_projects_page_includes_session_heartbeat_failover_monitor() -> None:
         "failover SLA",
         "operator escalation",
         "market infrastructure",
+        "not financial advice",
+        "not a production trading system",
+        "not connected to a broker or exchange",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_low_latency_trading_system_capstone() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Low-Latency Trading System Capstone",
+        "low-latency-trading-system-capstone",
+        "market data feed handler",
+        "sequence-gap detection",
+        "limit order book reconstruction",
+        "pre-trade risk gate",
+        "order gateway",
+        "drop-copy reconciliation",
+        "session heartbeat failover",
+        "deterministic replay",
+        "latency budget",
+        "integrated market infrastructure",
         "not financial advice",
         "not a production trading system",
         "not connected to a broker or exchange",
