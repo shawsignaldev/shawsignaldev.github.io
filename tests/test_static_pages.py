@@ -68,6 +68,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "session-heartbeat-failover-monitor",
         "low-latency-trading-system-capstone",
         "fpga-smartnic-market-data-core",
+        "market-data-feed-quality-gate",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1327,6 +1328,26 @@ def test_projects_page_includes_fpga_smartnic_market_data_core() -> None:
         "AXI Stream boundary",
         "PCIe DMA boundary",
         "line-rate market infrastructure",
+        "not financial advice",
+        "not a production trading system",
+        "not connected to a broker or exchange",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_market_data_feed_quality_gate() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Market Data Feed Quality Gate",
+        "market-data-feed-quality-gate",
+        "feed quality gate",
+        "sequence-gap detection",
+        "timestamp sanity",
+        "stale-feed detection",
+        "crossed quote",
+        "operator verdict",
+        "public-safe",
         "not financial advice",
         "not a production trading system",
         "not connected to a broker or exchange",
