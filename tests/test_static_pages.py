@@ -69,6 +69,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "low-latency-trading-system-capstone",
         "fpga-smartnic-market-data-core",
         "market-data-feed-quality-gate",
+        "event-time-feature-lineage-auditor",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1347,6 +1348,26 @@ def test_projects_page_includes_market_data_feed_quality_gate() -> None:
         "stale-feed detection",
         "crossed quote",
         "operator verdict",
+        "public-safe",
+        "not financial advice",
+        "not a production trading system",
+        "not connected to a broker or exchange",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_event_time_feature_lineage_auditor() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "Event-Time Feature Lineage Auditor",
+        "event-time-feature-lineage-auditor",
+        "point-in-time feature provenance",
+        "availability time",
+        "embargo window",
+        "lookahead leakage",
+        "missing source event",
+        "traceability score",
         "public-safe",
         "not financial advice",
         "not a production trading system",
