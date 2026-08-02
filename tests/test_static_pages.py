@@ -67,6 +67,7 @@ def test_project_catalog_includes_core_repositories() -> None:
         "drop-copy-reconciliation-engine",
         "session-heartbeat-failover-monitor",
         "low-latency-trading-system-capstone",
+        "fpga-smartnic-market-data-core",
         "market-sim-scenario-library",
         "lobframe-metric-dashboard",
         "lobframe-benchmark-suite",
@@ -1305,6 +1306,27 @@ def test_projects_page_includes_low_latency_trading_system_capstone() -> None:
         "deterministic replay",
         "latency budget",
         "integrated market infrastructure",
+        "not financial advice",
+        "not a production trading system",
+        "not connected to a broker or exchange",
+    ]
+    for phrase in expected:
+        assert phrase in projects
+
+
+def test_projects_page_includes_fpga_smartnic_market_data_core() -> None:
+    projects = read(ROOT / "projects.html")
+    expected = [
+        "FPGA SmartNIC Market Data Core",
+        "fpga-smartnic-market-data-core",
+        "SmartNIC flow table",
+        "market data packet parser",
+        "sequence-gap detection",
+        "hardware timestamp normalization",
+        "DMA descriptor budgeting",
+        "AXI Stream boundary",
+        "PCIe DMA boundary",
+        "line-rate market infrastructure",
         "not financial advice",
         "not a production trading system",
         "not connected to a broker or exchange",
